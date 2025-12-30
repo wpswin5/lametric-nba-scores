@@ -38,21 +38,28 @@ async def get_score(team_code: str):
                 "frames": [
                     {
                         "text": "{} vs {}".format(
-                            game['awayTeam']['teamTricode'],
-                            game['homeTeam']['teamTricode']
+                            game['homeTeam']['teamTricode'],
+                            game['awayTeam']['teamTricode']
                         ),
-                        "icon": "i1234"  # Placeholder icon ID
+                        "icon": "i8701"  # Placeholder icon ID
                     },
                     {
-                        "text": "{} - {}".format(
-                            game['awayTeam']['score'],
+                        "text": "{} {}".format(
+                            game['homeTeam']['teamTricode'],
                             game['homeTeam']['score']
                         ),
-                        "icon": "i1235"  # Placeholder icon ID
+                        "icon": "i8701"  # Placeholder icon ID
+                    },
+                                        {
+                        "text": "{} {}".format(
+                            game['awayTeam']['teamTricode'],
+                            game['awayTeam']['score']
+                        ),
+                        "icon": "i8701"  # Placeholder icon ID
                     },
                     {
                         "text": game['gameStatusText'],
-                        "icon": "i1236"  # Placeholder icon ID
+                        "icon": "i8701"  # Placeholder icon ID
                     }
                 ]
             }

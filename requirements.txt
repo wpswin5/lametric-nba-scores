@@ -1,1 +1,2 @@
 fastapi[all]
+nba_api

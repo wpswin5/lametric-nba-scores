@@ -19,7 +19,48 @@ async def list_scores():
     # dictionary
     resp = board.games.data
 
-    return resp
+    # base response
+    frames = {
+        "frames": []
+    }
+
+    # return all scores in lametric format
+    for game in resp:
+        frames["frames"].append(
+            {
+                "text": "{} vs {}".format(
+                    game['homeTeam']['teamTricode'],
+                    game['awayTeam']['teamTricode']
+                ),
+                "icon": 44958  # Placeholder icon ID
+            }
+        )
+        frames["frames"].append(
+            {
+                "text": "{} {}".format(
+                    game['homeTeam']['teamTricode'],
+                    game['homeTeam']['score']
+                ),
+                "icon": 1489  # Placeholder icon ID
+            }
+        )
+        frames["frames"].append(
+            {
+                "text": "{} {}".format(
+                    game['awayTeam']['teamTricode'],
+                    game['awayTeam']['score']
+                ),
+                "icon": 1489  # Placeholder icon ID
+            }
+        )
+        frames["frames"].append(
+            {
+                "text": game['gameStatusText'],
+                "icon": 1489  # Placeholder icon ID
+            }
+        )
+
+    return frames
 
 
 @router.get("/{team_code}")
@@ -41,25 +82,25 @@ async def get_score(team_code: str):
                             game['homeTeam']['teamTricode'],
                             game['awayTeam']['teamTricode']
                         ),
-                        "icon": "i8701"  # Placeholder icon ID
+                        "icon": 44958  # Placeholder icon ID
                     },
                     {
                         "text": "{} {}".format(
                             game['homeTeam']['teamTricode'],
                             game['homeTeam']['score']
                         ),
-                        "icon": "i8701"  # Placeholder icon ID
+                        "icon": 1489  # Placeholder icon ID
                     },
                                         {
                         "text": "{} {}".format(
                             game['awayTeam']['teamTricode'],
                             game['awayTeam']['score']
                         ),
-                        "icon": "i8701"  # Placeholder icon ID
+                        "icon": 1489  # Placeholder icon ID
                     },
                     {
                         "text": game['gameStatusText'],
-                        "icon": "i8701"  # Placeholder icon ID
+                        "icon": 1489  # Placeholder icon ID
                     }
                 ]
             }

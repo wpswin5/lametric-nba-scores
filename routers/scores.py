@@ -33,14 +33,30 @@ async def get_score(team_code: str):
 
     for game in resp:
         if team_code.upper() in (game['homeTeam']['teamTricode'], game['awayTeam']['teamTricode']):
-            # simplified format: status, home vs away : score
+            # sLaMetric format
             return {
-                "status": game['gameStatusText'],
-                "home_team": game['homeTeam']['teamTricode'],
-                "home_score": game['homeTeam']['score'],
-                "away_team": game['awayTeam']['teamTricode'],
-                "away_score": game['awayTeam']['score'],
+                "frames": [
+                    {
+                        "text": "{} vs {}".format(
+                            game['awayTeam']['teamTricode'],
+                            game['homeTeam']['teamTricode']
+                        ),
+                        "icon": "i1234"  # Placeholder icon ID
+                    },
+                    {
+                        "text": "{} - {}".format(
+                            game['awayTeam']['score'],
+                            game['homeTeam']['score']
+                        ),
+                        "icon": "i1235"  # Placeholder icon ID
+                    },
+                    {
+                        "text": game['gameStatusText'],
+                        "icon": "i1236"  # Placeholder icon ID
+                    }
+                ]
             }
+
     return {
         "status": "Game not found for team code: {}".format(team_code),
         "home_team": None,

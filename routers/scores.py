@@ -32,7 +32,7 @@ async def list_scores():
                     game['homeTeam']['teamTricode'],
                     game['awayTeam']['teamTricode']
                 ),
-                "icon": 44958  # Placeholder icon ID
+                "icon": "i44958"  # Placeholder icon ID
             }
         )
         frames["frames"].append(
@@ -41,7 +41,7 @@ async def list_scores():
                     game['homeTeam']['teamTricode'],
                     game['homeTeam']['score']
                 ),
-                "icon": 1489  # Placeholder icon ID
+                "icon": "i1489"  # Placeholder icon ID
             }
         )
         frames["frames"].append(
@@ -50,13 +50,13 @@ async def list_scores():
                     game['awayTeam']['teamTricode'],
                     game['awayTeam']['score']
                 ),
-                "icon": 1489  # Placeholder icon ID
+                "icon": "i1489"  # Placeholder icon ID
             }
         )
         frames["frames"].append(
             {
                 "text": game['gameStatusText'],
-                "icon": 1489  # Placeholder icon ID
+                "icon": "i1489"  # Placeholder icon ID
             }
         )
 
@@ -82,25 +82,25 @@ async def get_score(team_code: str):
                             game['homeTeam']['teamTricode'],
                             game['awayTeam']['teamTricode']
                         ),
-                        "icon": 44958  # Placeholder icon ID
+                        "icon": "i44958"  # Placeholder icon ID
                     },
                     {
                         "text": "{} {}".format(
                             game['homeTeam']['teamTricode'],
                             game['homeTeam']['score']
                         ),
-                        "icon": 1489  # Placeholder icon ID
+                        "icon": "i1489"  # Placeholder icon ID
                     },
                                         {
                         "text": "{} {}".format(
                             game['awayTeam']['teamTricode'],
                             game['awayTeam']['score']
                         ),
-                        "icon": 1489  # Placeholder icon ID
+                        "icon": "i1489"  # Placeholder icon ID
                     },
                     {
                         "text": game['gameStatusText'],
-                        "icon": 1489  # Placeholder icon ID
+                        "icon": "i1489"  # Placeholder icon ID
                     }
                 ]
             }
